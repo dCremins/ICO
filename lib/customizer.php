@@ -42,3 +42,15 @@ add_theme_support('custom-logo', array(
  'width'       => 100,
  'flex-width' => true,
 ));
+
+/**
+* Add ACF Options Page for Theme Options
+**/
+
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+    'page_title'  => 'Theme Options',
+    'menu_title'  => 'Theme Options',
+    'menu_slug'   => 'theme-options'
+    ));
+}
