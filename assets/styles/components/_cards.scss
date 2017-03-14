@@ -1,0 +1,11 @@
+.flex {
+  .card {
+    background-color: $primary;
+    color: $primary-inverse;
+
+    a,
+    h4 {
+      color: $primary-inverse;
+    }
+  }
+}

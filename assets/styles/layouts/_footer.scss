@@ -1,0 +1,11 @@
+.content-info {
+  background-color: $accent;
+  color: $accent-inverse;
+  margin-top: 60px;
+  padding: 20px;
+
+  a,
+  caption {
+    color: $accent-inverse;
+  }
+}

@@ -1,0 +1,86 @@
+body,
+html {
+  background-color: $background;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex: 1;
+}
+
+%header {
+  font-family: futura-pt;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+h1 {
+  @extend %header;
+  color: $primary;
+  font-size: ms(6);
+  font-weight: 700;
+}
+
+h2 {
+  @extend %header;
+  color: $accent;
+  font-size: ms(5);
+  font-weight: 300;
+}
+
+h3 {
+  @extend %header;
+  color: $primary;
+  font-size: ms(4);
+  font-weight: 700;
+}
+
+h4 {
+  @extend %header;
+  color: $accent;
+  font-size: ms(3);
+  font-weight: 300;
+
+  &.homepage {
+    color: $primary;
+    font-size: ms(5);
+  }
+}
+
+h5 {
+  @extend %header;
+  color: $primary;
+  font-size: ms(2);
+  font-weight: 700;
+  margin-bottom: .3em;
+}
+
+h6 {
+  @extend %header;
+  color: $text;
+  font-size: ms(1);
+  font-weight: 300;
+  margin-bottom: .3em;
+}
+
+p,
+ul {
+  color: $text;
+  font-family: Garamond;
+  font-size: ms(0);
+}
+
+a {
+  color: $primary;
+
+  &:hover {
+    color: $accent;
+    text-decoration: underline;
+  }
+}

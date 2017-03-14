@@ -1,0 +1,29 @@
+.brand {
+  &.color {
+    color: $primary;
+  }
+
+  &.background {
+    background-color: $primary;
+    color: $primary-inverse;
+  }
+
+  &.inverse {
+    color: $primary-inverse;
+  }
+}
+
+.accent {
+  &.color {
+    color: $accent;
+  }
+
+  &.background {
+    background-color: $accent;
+    color: $accent-inverse;
+  }
+
+  &.inverse {
+    color: $accent-inverse;
+  }
+}

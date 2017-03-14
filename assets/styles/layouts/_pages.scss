@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  flex-flow: row wrap;
+
+  .content,
+  .video {
+    flex: 1;
+    padding-right: 10px;
+  }
+}
