@@ -7,8 +7,7 @@
     $value: $value / 255;
     @if $value < .03928 {
       $value: $value / 12.92;
-    }
-    @else {
+    } @else {
       $value: ($value + .055) / 1.055;
       $value: poly-pow($value, 2.4);
     }
@@ -20,45 +19,47 @@
   $results: $results + (map-get($colors, 'green') * .7152) + (map-get($colors, 'blue') * .0722);
   @return $results;
 }
+
 @function color-compliance($base, $text) {
   $lum-a: luminance($base);
   $lum-b: luminance($text);
+  $luminance-1: $lum-a;
+  $luminance-2: $lum-b;
   $new-text: $text;
   $i: 0;
   $contrast: 0;
-  @if $lum-a > $lum-b {
-    $contrast: ($lum-a + .05) / ($lum-b + .05);
+  $ratio: $luminance-1 / $luminance-2;
+
+  @if $luminance-2 > $luminance-1 {
+    $ratio: 1 / $ratio;
   }
-  @else {
-    $contrast: ($lum-b + .05) / ($lum-a + .05);
-  }
-  @while $contrast < 4.5 {
+
+//  $ratio: round($ratio * 10) / 10;
+
+  @while $ratio < 4.5 {
     $i: $i + 1;
-    $new-text: alter-color($lum-a, $new-text);
-    $lum-b: luminance($new-text);
-    @if $lum-a > $lum-b {
-      $contrast: ($lum-a + .05) / ($lum-b + .05);
-    }
-    @else {
-      $contrast: ($lum-b + .05) / ($lum-a + .05);
-    }
+    $new-text: alt-color($luminance-1, $luminance-2, $new-text);
+    $luminance-2: luminance($new-text);
+    $ratio: $luminance-1 / $luminance-2;
     @if $i > 10 {
-       @warn'Infinite Loop, Contrast: #{$contrast}';
+       @warn'Infinite Loop, Contrast: #{$ratio}, #{$text}(#{$lum-b}) on #{$base}(#{$lum-a})';
       @return $new-text;
     }
   }
+
   @return $new-text;
 
 }
-@function alter-color($lum, $color) {
-   @if $lum < .15{
+
+@function alt-color($lum, $text-lum, $color) {
+  @if $lum < .18 {
     @return #fff;
-  }
-  @elseif $lum > .3 {
+  } @elseif $lum > $text-lum { // if the background is lighter than the color, darken the color
     $new-color: darken($color, 10%);
     @return $new-color;
-  }
-  @else {
+  } @elseif $lum > .8 {
+    @return #000;
+  } @else {  // if the background is darker than the color, lighten the color
     $new-color: lighten($color, 10%);
     @return $new-color;
   }

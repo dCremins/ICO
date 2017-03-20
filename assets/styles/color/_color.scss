@@ -1,0 +1,75 @@
+
+
+
+// Accessibility Text Adjustments
+// auto adjusts color contrast for WCAG 2.0 AA standards
+
+// color-compliance(background color, text color)
+
+$primary: color-compliance($background, $brand-primary);
+$accent: color-compliance($background, $brand-accent);
+$text: color-compliance($background, $brand-text);
+$primary-inverse: color-compliance($primary, $background);
+$accent-inverse: color-compliance($accent, $background);
+$text-inverse: color-compliance($text, $background);
+
+body,
+html {
+  background-color: $background;
+}
+
+h1,
+h3,
+h4.homepage,
+h5,
+a,
+.btn {
+  color: $primary;
+}
+
+h2,
+h4,
+a:hover,
+.btn:hover {
+  color: $accent;
+}
+
+h6,
+p,
+ul {
+  color: $text;
+}
+
+.icon {
+  background-color: $primary;
+
+  span {
+    color: $primary-inverse;
+  }
+}
+
+.content-info {
+  background-color: $accent;
+  color: $accent-inverse;
+
+  a,
+  caption {
+    color: $accent-inverse;
+  }
+}
+
+.sticky-nav {
+  background-color: $background;
+  border-bottom: 2px solid $brand-accent;
+}
+
+.site-header,
+.wp-custom-header {
+  background-color: $primary;
+
+  h1,
+  h2,
+  h3 {
+    color: $primary-inverse;
+  }
+}

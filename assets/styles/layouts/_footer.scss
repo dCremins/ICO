@@ -1,11 +1,25 @@
 .content-info {
-  background-color: $accent;
-  color: $accent-inverse;
   margin-top: 60px;
   padding: 20px;
+  text-align: center;
 
-  a,
-  caption {
-    color: $accent-inverse;
+  a {
+    text-decoration: underline;
+  }
+
+  .foot-logo {
+    width: 100px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .row {
+    align-items: center;
   }
 }

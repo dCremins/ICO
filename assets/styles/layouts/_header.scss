@@ -1,12 +1,4 @@
 .banner {
-  .nav a {
-    @extend .nav-link;
-  }
-
-  .nav li {
-    @extend .nav-item;
-  }
-
   ul {
     flex-flow: wrap row;
   }
@@ -14,35 +6,47 @@
   .container {
     padding: 10px 0;
 
+    ul {
+      justify-content: space-between;
+    }
+
     li {
-      flex: 1;
       text-align: center;
     }
   }
 
   .sticky-nav {
-    background-color: $background;
-    border-bottom: 2px solid $brand-accent;
+    width: 100%;
   }
 }
 
-.site-header {
-  background-color: $primary;
+.site-header,
+.wp-custom-header {
   height: 450px;
   margin: 0 auto;
   max-width: 1500px;
-  padding: 20px;
+  //padding: 20px;
+  overflow: hidden;
   position: relative;
+  width: 100%;
+  z-index: 1;
 
   img {
-    max-width: 100%;
+    height: 100%;
+    width: auto;
   }
+}
 
-  h1,
-  h2,
-  h3 {
-    color: $primary-inverse;
-  }
+.image-overlay {
+  background: $black;
+  height: 80%;
+  left: 15%;
+  opacity: .4;
+  position: absolute;
+  top: 10%;
+  width: 70%;
+  z-index: 2;
+
 }
 
 .wrap {
@@ -57,6 +61,7 @@
   position: absolute;
   top: 0;
   width: 100%;
+  z-index: 3;
 
   .content {
     text-align: center;

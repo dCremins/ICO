@@ -1,21 +1,19 @@
 
 // Colors
 
-$brand-primary: #82ad87;
-$brand-accent: #a0814b;
-$background: #fff;
-$brand-text: #333;
+$black: #000;
+$spacer: 1em;
 
 // Accessibility Text Adjustments
 // color-compliance(background color, text color) auto adjusts color contrast for WCAG 2.0 AA standards
-
+/*
 $primary: color-compliance($background, $brand-primary);
 $accent: color-compliance($background, $brand-accent);
 $text: color-compliance($background, $brand-text);
 $primary-inverse: color-compliance($primary, $background);
 $accent-inverse: color-compliance($accent, $background);
 $text-inverse: color-compliance($text, $background);
-
+*/
 // Breakpoints
 
 $tablet: 768px;
@@ -24,12 +22,12 @@ $wide-desktop: 1200px;
 
 // Paths
 
-$fa-font-path: '~font-awesome/fonts';
+//$fa-font-path: '~font-awesome/fonts';
 @import 'font-awesome';
 
 // Text
 
-$ms-base: 14px;
+$ms-base: 16px;
 $ms-ratio: 1.153;
 
 $primary-font: 'futura-pt';

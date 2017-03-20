@@ -12,9 +12,44 @@
       ],
       "main": true
     },
+    "green.css": {
+      "files": [
+        "styles/green.scss"
+      ],
+      "main": true
+    },
+    "blue.css": {
+      "files": [
+        "styles/blue.scss"
+      ],
+      "main": true
+    },
+    "orange.css": {
+      "files": [
+        "styles/orange.scss"
+      ],
+      "main": true
+    },
+    "purple.css": {
+      "files": [
+        "styles/purple.scss"
+      ],
+      "main": true
+    },
+    "red.css": {
+      "files": [
+        "styles/red.scss"
+      ],
+      "main": true
+    },
     "customizer.js": {
       "files": [
         "scripts/customizer.js"
+      ]
+    },
+    "menu.js": {
+      "files": [
+        "scripts/menu.js"
       ]
     },
     "jquery.js": {
