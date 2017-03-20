@@ -1,5 +1,31 @@
-@include breakpoint(600px) {
+.menu-toggle .fa {
+  transition: all .3s linear;
+}
+
+@include breakpoint($tablet) {
   .menu-toggle {
     display: none;
+  }
+
+}
+
+@include breakpoint(max-width $tablet - 1) {
+  .nav {
+    flex: 100%;
+    height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav.toggled-on {
+    display: block;
+    height: 400px;
+    opacity: 1;
+    width: 100%;
+    visibility: visible;
+
+    li {
+      margin-top: 10px;
+    }
   }
 }

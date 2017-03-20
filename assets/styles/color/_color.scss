@@ -1,5 +1,7 @@
 
-
+$tablet: 768px;
+$desktop: 992px;
+$wide-desktop: 1200px;
 
 // Accessibility Text Adjustments
 // auto adjusts color contrast for WCAG 2.0 AA standards
@@ -71,5 +73,20 @@ ul {
   h2,
   h3 {
     color: $primary-inverse;
+  }
+}
+
+@include breakpoint(max-width $tablet - 1) {
+
+  .nav.toggled-on {
+    a:hover,
+    a:active,
+    a:focus,
+    li:hover,
+    li:active,
+    li:focus {
+      background-color: $accent;
+      color: $accent-inverse;
+    }
   }
 }

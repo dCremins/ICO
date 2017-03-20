@@ -54,19 +54,23 @@
     <?php } ?>
   <div class="sticky-nav">
     <nav id="site-navigation" class="container">
-      <button class="menu-toggle">Menu</button>
       <?php
       $custom_logo_id = get_theme_mod('custom_logo');
       $image = wp_get_attachment_image_src($custom_logo_id, 'full');
       $home = get_home_url();
       if (has_nav_menu('primary_navigation')) :
+          echo '<a class="site-logo" href="'
+              . $home
+              . '"><img alt="website logo" src="'
+              . $image[0]
+              . '"></a>';
+
+          echo '<button class="menu-toggle btn btn-secondary" aria-label="responsive menu toggle">
+               <i class="fa fa-bars" aria-hidden="true"></i>
+               </button>';
         wp_nav_menu([
           'theme_location' => 'primary_navigation',
-          'items_wrap'     => '<ul id="%1$s" class="%2$s"><li><a class="site-logo" href="'
-                              . $home
-                              . '"><img alt="website logo" src="'
-                              . $image[0]
-                              . '"></a></li> %3$s</ul>',
+          'items_wrap'     => '<ul id="%1$s" class="%2$s"> %3$s</ul>',
           'container'      => false,
           'menu_class'     => 'nav'
         ]);

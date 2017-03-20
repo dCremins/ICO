@@ -4,11 +4,10 @@
   }
 
   .container {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
     padding: 10px 0;
-
-    ul {
-      justify-content: space-between;
-    }
 
     li {
       text-align: center;
@@ -71,6 +70,10 @@
 
 .nav {
   align-items: center;
+  flex: 1;
+  justify-content: space-between;
+  margin: 0 25px;
+  transition: height .5s, opacity 1.5s;
 
   a {
     font-family: futura-pt;

@@ -5,6 +5,7 @@
 	}
 
 	button = nav.getElementsByTagName( 'button' )[0];
+	icon   = nav.getElementsByTagName( 'i' )[0];
 	menu   = nav.getElementsByTagName( 'ul' )[0];
 	if ( ! button ) {
 		return;
@@ -23,9 +24,11 @@
 
 		if ( -1 !== button.className.indexOf( 'toggled-on' ) ) {
 			button.className = button.className.replace( ' toggled-on', '' );
+			icon.className = icon.className.replace( ' fa-rotate-90', '' );
 			menu.className = menu.className.replace( ' toggled-on', '' );
 		} else {
 			button.className += ' toggled-on';
+			icon.className += ' fa-rotate-90';
 			menu.className += ' toggled-on';
 		}
 	};
