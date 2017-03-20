@@ -2,11 +2,11 @@
   transition: all .3s linear;
 }
 
+
 @include breakpoint($tablet) {
   .menu-toggle {
     display: none;
   }
-
 }
 
 @include breakpoint(max-width $tablet - 1) {
@@ -26,6 +26,24 @@
 
     li {
       margin-top: 10px;
+    }
+  }
+
+  .wrap.container {
+    width: 100%;
+  }
+}
+
+
+@include breakpoint(max-width $desktop) {
+  .row,
+  .flex {
+    display: block;
+
+    div {
+      flex: none;
+      max-width: 100%;
+      width: 100%;
     }
   }
 }
