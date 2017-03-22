@@ -31,11 +31,11 @@ if (!class_exists('acf')) {
 
 //Include the /acf folder in the places to look for ACF Local JSON files
 add_filter('acf/settings/load_json', function ($paths) {
-    $paths[] = get_template_directory() . '/acf/acf-json';
+    $paths[] = get_template_directory() . '/acf-json';
     return $paths;
 });
 
 add_filter('acf/settings/save_json', function ($path) {
-    $path = get_template_directory() . '/acf/acf-json';
+    $path = get_template_directory() . '/acf-json';
     return $path;
 });
