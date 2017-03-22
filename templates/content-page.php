@@ -1,3 +1,4 @@
+<section>
 <?php
 
 if (get_field('video')) {
@@ -14,3 +15,5 @@ if (get_field('video')) {
 }
 
 wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); ?>
+
+</section>

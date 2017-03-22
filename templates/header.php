@@ -1,4 +1,4 @@
-<header class="banner">
+<header class="banner" role="banner">
   <?php if (is_front_page()) { ?>
     <div class="site-header">
         <?php
@@ -53,7 +53,7 @@
 
     <?php } ?>
   <div class="sticky-nav">
-    <nav id="site-navigation" class="container">
+    <nav role="navigation" id="site-navigation" class="container">
       <?php
       $custom_logo_id = get_theme_mod('custom_logo');
       $image = wp_get_attachment_image_src($custom_logo_id, 'full');

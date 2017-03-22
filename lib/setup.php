@@ -60,6 +60,13 @@ function widgets_init() {
     'before_widget' => '<section class="widget %1$s %2$s">',
     'after_widget'  => '</section>'
   ]);
+
+  register_sidebar([
+    'name'          => __('Search Page', 'sage'),
+    'id'            => 'sidebar-search',
+    'before_widget' => '<section class="col-lg-6 widget %1$s %2$s">',
+    'after_widget'  => '</section>'
+  ]);
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 

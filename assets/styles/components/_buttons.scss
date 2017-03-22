@@ -5,4 +5,12 @@
   font-size: ms(3);
   font-weight: 700;
   margin: 0 20px;
+
+  &.search-button {
+    border: 1px solid $bootstrap-grey;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
 }

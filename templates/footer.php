@@ -1,4 +1,4 @@
-<footer class="content-info">
+<footer class="content-info" role="contentinfo">
   <div class="container">
     <div class="row">
       <?php  if (get_field('search', 'option')) { ?>
