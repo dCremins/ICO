@@ -51,7 +51,8 @@ h4 {
   }
 }
 
-h5 {
+h5,
+th {
   @extend %header;
   font-size: ms(2);
   font-weight: 700;
@@ -66,7 +67,8 @@ h6 {
 }
 
 p,
-ul {
+ul,
+td {
   font-family: $secondary-font;
   font-size: ms(0);
 }
