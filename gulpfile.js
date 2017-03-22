@@ -103,7 +103,7 @@ var cssTasks = function(filename) {
       return gulpif('*.scss', sass({
         outputStyle: 'nested', // libsass doesn't support expanded yet
         precision: 10,
-        includePaths: ['.'].concat(scssIncludePaths), 
+        includePaths: ['.'].concat(scssIncludePaths),
         errLogToConsole: !enabled.failStyleTask
       }));
     })
@@ -271,6 +271,21 @@ gulp.task('watch', function() {
   gulp.watch(['bower.json', 'assets/manifest.json'], ['build']);
 });
 
+
+/*
+gulp.task('acf', function() {
+  return gulp.src(globs.acf)
+    .pipe(gulp.dest(path.dist + 'acf'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('build', function(callback) {
+  runSequence('styles',
+              'scripts',
+              ['fonts', 'images', 'acf'],
+              callback);
+});
+*/
 // ### Build
 // `gulp build` - Run all the build tasks but don't clean up beforehand.
 // Generally you should be running `gulp` instead of `gulp build`.
@@ -280,6 +295,8 @@ gulp.task('build', function(callback) {
               ['fonts', 'images'],
               callback);
 });
+
+
 
 // ### Wiredep
 // `gulp wiredep` - Automatically inject Less and Sass Bower dependencies. See

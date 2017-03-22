@@ -54,9 +54,12 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "acf": {
+      "files": ["acf/**/*"]
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://ico.dev"
   }
 }

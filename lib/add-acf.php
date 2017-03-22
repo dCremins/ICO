@@ -9,7 +9,7 @@ if (!class_exists('acf')) {
   function my_acf_settings_path($path)
   {
       // update path
-      $path = get_stylesheet_directory() . '/acf/';
+      $path = get_template_directory() . '/acf/';
 
       // return
       return $path;
@@ -20,23 +20,22 @@ if (!class_exists('acf')) {
   function my_acf_settings_dir($dir)
   {
       // update path
-      $dir = plugin_dir_url(dirname(__FILE__)) . '/acf/';
+      $dir = get_template_directory() . '/acf/';
 
       // return
       return $dir;
   }
 
-  include_once(get_stylesheet_directory() . '/acf/acf.php');
-  //include_once(plugins_url('/acf/acf.php', __FILE__));
+  include_once(get_template_directory() . '/acf/acf.php');
 }
 
 //Include the /acf folder in the places to look for ACF Local JSON files
 add_filter('acf/settings/load_json', function ($paths) {
-    $paths[] = get_stylesheet_directory() . '/acf/acf-json';
+    $paths[] = get_template_directory() . '/acf/acf-json';
     return $paths;
 });
 
 add_filter('acf/settings/save_json', function ($path) {
-    $path = get_stylesheet_directory() . '/acf/acf-json';
+    $path = get_template_directory() . '/acf/acf-json';
     return $path;
 });
