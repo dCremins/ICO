@@ -22,7 +22,7 @@
   margin-bottom: ($spacer / 2);
 }
 
-@include breakpoint(sm) {
+@include breakpoint($tablet) {
   // Only float if not on an extra small device
   .alignleft {
     float: left;
