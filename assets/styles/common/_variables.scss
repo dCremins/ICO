@@ -4,6 +4,7 @@
 $black: #000;
 $spacer: 1em;
 $bootstrap-grey: #ccc;
+$bootstrap-dark-grey: #636c72;
 
 // Breakpoints
 
@@ -22,3 +23,39 @@ $ms-ratio: 1.153;
 
 $primary-font: 'futura-pt';
 $secondary-font: 'adobe-garamond-pro';
+
+// Boostraps Extends for WP-Classes
+%figure-caption {
+  color: $bootstrap-dark-grey;
+  font-size: 90%;
+}
+
+%figure-img {
+  line-height: 1;
+  margin-bottom: .5rem;
+}
+
+%sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+%sr-only-focusable {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+ }
+
+%img-fluid {
+  height: auto;
+  max-width: 100%;
+}
