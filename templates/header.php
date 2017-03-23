@@ -55,14 +55,20 @@
   <div class="sticky-nav">
     <nav role="navigation" id="site-navigation" class="container">
       <?php
-      $custom_logo_id = get_theme_mod('custom_logo');
-      $image = wp_get_attachment_image_src($custom_logo_id, 'full');
+      if (get_field('logo', 'option')) {
+        $image = get_field('logo', 'option');
+        $src = $image['url'];
+      } else {
+        $custom_logo_id = get_theme_mod('custom_logo');
+        $image = wp_get_attachment_image_src($custom_logo_id, 'full');
+        $src = $image[0];
+      }
       $home = get_home_url();
       if (has_nav_menu('primary_navigation')) :
           echo '<a class="site-logo" href="'
               . $home
               . '"><img alt="website logo" src="'
-              . $image[0]
+              . $src
               . '"></a>';
 
           echo '<button class="menu-toggle btn btn-secondary" aria-label="responsive menu toggle">
