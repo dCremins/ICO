@@ -22,9 +22,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "237"
+                "value": "template-home.php"
             }
         ]
     ],
