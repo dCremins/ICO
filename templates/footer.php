@@ -44,7 +44,7 @@
       <?php
       if (get_field('sponsor-logo', 'option')) {
         $logo = get_field('sponsor-logo', 'option');
-        echo '<div class="col-2"><div class="foot-logo"';
+        echo '<div class="col-2"><div class="foot-logo">';
         if (get_field('website', 'option')) {
            echo '<a href="'
            . get_field('website', 'option') . '" alt="' . get_field('sponsor', 'option') . '">';
