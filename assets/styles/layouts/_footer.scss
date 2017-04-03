@@ -23,3 +23,16 @@
     align-items: center;
   }
 }
+
+.nav-links {
+  @extend %row;
+
+  .nav-previous,
+  .nav-next {
+    @extend %col;
+  }
+
+  .nav-next {
+    text-align: right;
+  }
+}

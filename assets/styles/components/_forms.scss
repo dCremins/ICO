@@ -7,6 +7,15 @@
   font-weight: normal;
   //@extend .form-group;
 }
+
+form,
+#search {
+  font-family: $primary-font;
+}
+
+input {
+  font-family: $secondary-font;
+}
 //.search-form .search-field {
   //@extend .form-control;
 //}

@@ -52,6 +52,11 @@
         "scripts/menu.js"
       ]
     },
+    "search.js": {
+      "files": [
+        "scripts/search.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     },

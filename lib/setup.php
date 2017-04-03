@@ -86,12 +86,19 @@ function display_sidebar() {
 
   return apply_filters('sage/display_sidebar', $display);
 }
+/**
+* Remove Wordpress Head Styles
+**/
+
+add_theme_support('admin-bar', array('callback' => '__return_false'));
+
 
 /**
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), ['color/css'], false, null);
+  wp_enqueue_style('dashicons');
+  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), ['color/css', 'dashicons'], false, null);
 
 // Set Color Via Theme Options
   if (get_field('color_scheme', 'option') == 'Blue') {
@@ -111,6 +118,7 @@ function assets() {
   }
 
   wp_enqueue_script('responsive-menu/js', Assets\asset_path('scripts/menu.js'), ['jquery'], null, true);
+  wp_enqueue_script('search/js', Assets\asset_path('scripts/search.js'), ['jquery'], null, true);
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 }

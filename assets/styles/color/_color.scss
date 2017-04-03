@@ -32,7 +32,10 @@ a,
 h2,
 h4,
 a:hover,
-.btn:hover {
+a:focus,
+a:active,
+.btn:hover,
+.search-pag.subheader {
   color: $accent;
 }
 

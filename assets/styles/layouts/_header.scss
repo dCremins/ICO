@@ -50,9 +50,7 @@
 
 }
 
-.wrap {
-  padding-top: 60px;
-}
+
 
 .site-info {
   align-items: center;
@@ -80,10 +78,14 @@
   a {
     font-family: futura-pt;
     font-weight: 400;
+  }
+}
 
-    &.site-logo {
-      margin-right: 15px;
-      padding: 0;
-    }
+.site-logo {
+  margin-right: 15px;
+  padding: 0;
+
+  img {
+    max-width: 100px;
   }
 }

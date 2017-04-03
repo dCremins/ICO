@@ -11,13 +11,14 @@ body {
 
 .page-wrapper {
   display: flex;
-  flex: 1;
+  //flex: 1;
   flex-direction: column;
   min-height: 100vh;
 }
 
 .wrap {
-  flex: none;
+  flex: 1 0 auto;
+  padding-top: 60px;
 }
 
 %header {
@@ -82,6 +83,10 @@ td {
 
 span {
   font-family: $primary-font;
+
+  &.dashicons {
+    font-family: dashicons;
+  }
 }
 
 a {

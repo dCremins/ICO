@@ -59,3 +59,22 @@ $secondary-font: 'adobe-garamond-pro';
   height: auto;
   max-width: 100%;
 }
+
+%row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+%col {
+  -webkit-box-flex: 1;
+  flex-basis: 0;
+  flex-grow: 1;
+  -ms-flex-positive: 1;
+  -ms-flex-preferred-size: 0;
+  max-width: 100%;
+}

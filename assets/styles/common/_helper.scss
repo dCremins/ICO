@@ -27,3 +27,18 @@
     color: $accent-inverse;
   }
 }
+
+.text {
+  &.color {
+    color: $text;
+  }
+
+  &.background {
+    background-color: $text;
+    color: $text-inverse;
+  }
+
+  &.inverse {
+    color: $text-inverse;
+  }
+}

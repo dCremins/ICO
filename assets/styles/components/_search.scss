@@ -1,0 +1,31 @@
+.search-page {
+  &.subheader {
+    font-size: ms(2);
+  }
+
+  &.search-results {
+    border-bottom: 1px solid $bootstrap-grey;
+    margin: 1em auto;
+    padding-bottom: 1em;
+
+    h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .collapse {
+    margin-top: 2em;
+  }
+
+  #authors-collapser {
+    margin-top: 0;
+  }
+
+  .form-check {
+    margin-right: 1em;
+
+    input {
+      margin-right: 5px;
+    }
+  }
+}
