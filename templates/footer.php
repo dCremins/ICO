@@ -3,9 +3,10 @@
 <footer class="content-info" role="contentinfo">
   <div class="container">
     <div class="row">
-      <?php  if (get_field('search', 'option')) { ?>
+      <?php  if (get_field('search', 'option')) {
+        $home = get_home_url();?>
       <div class="col-2">
-        <a href="<?php home_url(); ?>/search">Search</a>
+        <a href="<?php echo $home; ?>/search">Search</a>
       </div>
       <?php } ?>
 
