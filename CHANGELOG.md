@@ -1,8 +1,11 @@
 == Changelog ==
 
+The following numbers are almost certainly not correct semantic versioning, but I tried
 
 = 0.2.0 =
-* Add Author Archive
+* Change Banner Darken block to remove need for absolute div
+* Styled support for first level sub menus
+* 'Post-Conference' toggle added to Theme Options for one click switch of styles
 
 = 0.1.6 =
 * Fix search link option in Footer
