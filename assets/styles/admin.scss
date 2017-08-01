@@ -1,0 +1,23 @@
+.acf-field {
+  &.no-label .acf-label label {
+    display: none;
+  }
+
+  .values ul::before {
+    content: 'Selected';
+    font-weight: bold;
+    padding: 10px 0 20px;
+    text-align: center;
+    text-decoration: underline;
+    width: 100%;
+  }
+
+  .choices ul::before {
+    content: 'Available';
+    font-weight: bold;
+    padding: 10px 0 20px;
+    text-align: center;
+    text-decoration: underline;
+    width: 100%;
+  }
+}

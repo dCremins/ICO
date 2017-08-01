@@ -3,9 +3,34 @@
 }
 
 
-@include breakpoint($tablet) {
+@include breakpoint($tablet) { //Larger than tablet size
   .menu-toggle {
     display: none;
+  }
+
+  a {
+    padding: 0;
+  }
+
+  li {
+    .sub-menu {
+      display: none;
+      padding: 0;
+      position: absolute;
+
+      a {
+        display: block;
+        padding: 0 15px 10px;
+      }
+
+      a:first-child {
+        padding-top: 10px;
+      }
+    }
+
+    &:hover .sub-menu {
+      display: block;
+    }
   }
 }
 
@@ -19,10 +44,10 @@
 
   .nav.toggled-on {
     display: block;
-    height: 400px;
+    height: auto;
     opacity: 1;
-    width: 100%;
     visibility: visible;
+    width: 100%;
 
     li {
       margin-top: 10px;

@@ -79,17 +79,53 @@ ul {
   }
 }
 
+.sub-menu {
+  a {
+    color: $accent;
+  }
+
+  li:hover,
+  a:hover {
+    background-color: $primary;
+    color: $primary-inverse;
+    text-decoration: none;
+  }
+}
+
+@include breakpoint($tablet) {
+  .sub-menu {
+    background-color: $accent;
+
+    a {
+      color: $accent-inverse;
+    }
+
+    li:hover,
+    a:hover {
+      background-color: $primary;
+      color: $primary-inverse;
+      text-decoration: none;
+    }
+  }
+}
+
 @include breakpoint(max-width $tablet - 1) {
 
   .nav.toggled-on {
     a:hover,
     a:active,
-    a:focus,
-    li:hover,
-    li:active,
-    li:focus {
+    a:focus {
       background-color: $accent;
       color: $accent-inverse;
+    }
+  }
+
+  .nav.toggled-on .sub-menu {
+    li:hover,
+    a:hover {
+      background-color: $primary;
+      color: $primary-inverse;
+      text-decoration: none;
     }
   }
 }

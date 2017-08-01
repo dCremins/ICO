@@ -57,11 +57,10 @@
     "wiredep": "^4.0.0"
   },
   "dependencies": {
-    "bootstrap": "4.0.0-alpha.6",
-    "breakpoint-sass": "^2.7.1",
+    "bootstrap": "^4.0.0-alpha.6",
     "font-awesome": "^4.7.0",
     "modularscale-sass": "^2.1.1",
     "sass-include-paths": "^4.10.0",
-    "sass-math-pow": "^0.1.3"
+    "sass-math-pow": "^0.1.4"
   }
 }

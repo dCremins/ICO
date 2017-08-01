@@ -12,6 +12,12 @@
       ],
       "main": true
     },
+    "admin.css": {
+      "files": [
+        "styles/admin.scss"
+      ],
+      "main": false
+    },
     "green.css": {
       "files": [
         "styles/green.scss"

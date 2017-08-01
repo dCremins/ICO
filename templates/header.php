@@ -2,9 +2,6 @@
   <?php if (is_front_page()) { ?>
     <div class="site-header">
         <?php
-        if (get_field('darken_image', 'option')) {
-          echo '<div class="image-overlay"></div>';
-        }
         if (get_field('banner_image', 'option')) {
           $banner = get_field('banner_image', 'option');
           echo '<div class="wp-custom-header">
@@ -17,7 +14,7 @@
         ?>
 
         <div class="site-info">
-          <div class="content">
+          <div class="content <?php if (get_field('darken_image', 'option')) {echo 'image-overlay';}?>">
             <h1>
               <?php
               if (get_field('title', 'option')) {
@@ -39,7 +36,7 @@
               } ?>
             </h2>
             <?php
-            if (have_rows('buttons', 'option')) {
+            if (have_rows('buttons', 'option') && !get_field('post_conference', 'option')) {
               while (have_rows('buttons', 'option')) {
                 the_row();
                 echo '<a class="btn btn-secondary" href="' . get_sub_field('link', 'option') . '" role="button">';
@@ -64,23 +61,43 @@
         $src = $image[0];
       }
       $home = get_home_url();
-      if (has_nav_menu('primary_navigation')) :
-          echo '<a class="site-logo" href="'
-              . $home
-              . '"><img alt="website logo" src="'
-              . $src
-              . '"></a>';
+      if (get_field('post_conference', 'option')) {
+        if (has_nav_menu('post_navigation')) {
+            echo '<a class="site-logo" href="'
+                . $home
+                . '"><img alt="website logo" src="'
+                . $src
+                . '"></a>';
 
-          echo '<button class="menu-toggle btn btn-secondary" aria-label="responsive menu toggle">
-               <i class="fa fa-bars" aria-hidden="true"></i>
-               </button>';
-        wp_nav_menu([
-          'theme_location' => 'primary_navigation',
-          'items_wrap'     => '<ul id="%1$s" class="%2$s"> %3$s</ul>',
-          'container'      => false,
-          'menu_class'     => 'nav'
-        ]);
-      endif;
+            echo '<button class="menu-toggle btn btn-secondary" aria-label="responsive menu toggle">
+                 <i class="fa fa-bars" aria-hidden="true"></i>
+                 </button>';
+          wp_nav_menu([
+            'theme_location' => 'post_navigation',
+            'items_wrap'     => '<ul id="%1$s" class="%2$s"> %3$s</ul>',
+            'container'      => false,
+            'menu_class'     => 'nav'
+          ]);
+        }
+      } else {
+        if (has_nav_menu('pre_navigation')) {
+            echo '<a class="site-logo" href="'
+                . $home
+                . '"><img alt="website logo" src="'
+                . $src
+                . '"></a>';
+
+            echo '<button class="menu-toggle btn btn-secondary" aria-label="responsive menu toggle">
+                 <i class="fa fa-bars" aria-hidden="true"></i>
+                 </button>';
+          wp_nav_menu([
+            'theme_location' => 'pre_navigation',
+            'items_wrap'     => '<ul id="%1$s" class="%2$s"> %3$s</ul>',
+            'container'      => false,
+            'menu_class'     => 'nav'
+          ]);
+        }
+      }
       ?>
     </nav>
   </div>

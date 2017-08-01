@@ -1,6 +1,9 @@
 == Changelog ==
 
 
+= 0.2.0 =
+* Add Author Archive
+
 = 0.1.6 =
 * Fix search link option in Footer
 

@@ -16,6 +16,11 @@
     }
   }
 
+  .sub-menu {
+    list-style: none;
+    padding: 0;
+  }
+
   .sticky-nav {
     width: 100% !important;
   }
@@ -39,15 +44,8 @@
 }
 
 .image-overlay {
-  background: $black;
-  height: 80%;
-  left: 12%;
-  opacity: .4;
-  position: absolute;
-  top: 10%;
-  width: 84%;
-  z-index: 2;
-
+  background-color: rgba(0, 0, 0, .4);
+  padding: 10px;
 }
 
 
@@ -65,6 +63,10 @@
   .content {
     text-align: center;
     width: 80%;
+
+    h2 {
+      margin: 0;
+    }
   }
 }
 
@@ -76,8 +78,10 @@
   transition: height .5s, opacity 1.5s;
 
   a {
+    display: block;
     font-family: futura-pt;
     font-weight: 400;
+    padding: 10px;
   }
 }
 
