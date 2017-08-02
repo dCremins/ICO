@@ -9,6 +9,15 @@ body {
   flex-direction: column;
 }
 
+ul li {
+  list-style: none;
+
+  &::before {
+    content: '\2022';
+    padding-right: 10px;
+  }
+}
+
 .page-wrapper {
   display: flex;
   //flex: 1;
@@ -29,29 +38,30 @@ body {
 
 h1 {
   @extend %header;
-  font-size: ms(6);
+  font-size: ms(4);
   font-weight: 700;
 }
 
 h2 {
   @extend %header;
-  font-size: ms(5);
+  font-size: ms(3);
   font-weight: 300;
 }
 
 h3 {
   @extend %header;
-  font-size: ms(4);
+  font-size: ms(3);
   font-weight: 700;
 
   &.homepage {
+    font-size: ms(4);
     font-weight: 300;
   }
 }
 
 h4 {
   @extend %header;
-  font-size: ms(3);
+  font-size: ms(2);
   font-weight: 300;
 
   &.homepage {

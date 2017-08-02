@@ -35,7 +35,8 @@ a:hover,
 a:focus,
 a:active,
 .btn:hover,
-.search-pag.subheader {
+.search-pag.subheader,
+ul li::before {
   color: $accent;
 }
 
