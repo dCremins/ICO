@@ -10,12 +10,10 @@
     <span class="muted-text">
     <?php //the_excerpt();
     echo ucfirst(get_post_type());
-    if (get_field('date')) {
-      echo ' | ' . date("F jS", strtotime(get_field('date')));
-    } elseif (get_field('session_title')) {
-      echo ' | ' . date("F jS", strtotime(get_field('session')));
-    } elseif (get_field('session')) {
-      echo ' | ' . date("F jS", strtotime(get_field('date', get_field('session'))));
+    if (class_exists('acf')) {
+      if (get_field('session')) {
+        echo ' | ' . get_the_title(get_field('session'));
+      }
     }
     ?>
   </span>

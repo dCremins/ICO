@@ -102,6 +102,7 @@ function assets() {
   wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), ['color/css', 'dashicons'], false, null);
 
 // Set Color Via Theme Options
+if (class_exists('acf')) {
   if (get_field('color_scheme', 'option') == 'Blue') {
     wp_enqueue_style('color/css', Assets\asset_path('styles/blue.css'), false, null);
   } elseif (get_field('color_scheme', 'option') == 'Red') {
@@ -110,9 +111,11 @@ function assets() {
     wp_enqueue_style('color/css', Assets\asset_path('styles/purple.css'), false, null);
   } elseif (get_field('color_scheme', 'option') == 'Orange') {
     wp_enqueue_style('color/css', Assets\asset_path('styles/orange.css'), false, null);
-  } else {
-    wp_enqueue_style('color/css', Assets\asset_path('styles/green.css'), false, null);
   }
+} else {
+  wp_enqueue_style('color/css', Assets\asset_path('styles/green.css'), false, null);
+}
+
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');

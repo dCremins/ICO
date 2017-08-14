@@ -2,8 +2,10 @@
 
 <header class="page-header">
   <?php
-  if (get_field('title', 'option')) {
-    $h1 = get_field('title', 'option');
+  if (class_exists('acf')) {
+    if (get_field('title', 'option')) {
+      $h1 = get_field('title', 'option');
+    }
   } else {
     $h1 = get_bloginfo('name');
   }

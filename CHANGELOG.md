@@ -2,12 +2,12 @@
 
 The following numbers are almost certainly not correct semantic versioning, but I tried
 
-= =
+= 1.0.0 =
 * Adjusted padding and h2 margin for site info block
 * no-label class for ACF
 * Changed li bullet styles
 * Adjusted H font sizes
-
+* Added author filter
 
 = 0.2.0 =
 * Change Banner Darken block to remove need for absolute div
