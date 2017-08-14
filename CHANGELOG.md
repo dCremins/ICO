@@ -2,6 +2,9 @@
 
 The following numbers are almost certainly not correct semantic versioning, but I tried
 
+= 1.0.1 =
+* Fix Typekit Path
+
 = 1.0.0 =
 * Adjusted padding and h2 margin for site info block
 * no-label class for ACF

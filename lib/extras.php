@@ -37,7 +37,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  */
 
 function theme_typekit() {
-    wp_enqueue_script('theme_typekit', '//use.typekit.net/ius0wyf.js');
+    wp_enqueue_script('theme_typekit', '//use.typekit.net/ezj7hwz.js');
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\theme_typekit');
 
