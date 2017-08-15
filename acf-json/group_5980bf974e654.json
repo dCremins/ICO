@@ -1,0 +1,47 @@
+{
+    "key": "group_5980bf974e654",
+    "title": "Post Conference",
+    "fields": [
+        {
+            "key": "field_5980bfa0ac354",
+            "label": "Post-Conference",
+            "name": "post_conference",
+            "type": "checkbox",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "no-label",
+                "id": ""
+            },
+            "choices": {
+                "Switch to post conference?": "Switch to post conference?"
+            },
+            "allow_custom": 0,
+            "save_custom": 0,
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "return_format": "value"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "theme-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1501611023
+}

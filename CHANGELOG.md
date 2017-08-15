@@ -2,6 +2,9 @@
 
 The following numbers are almost certainly not correct semantic versioning, but I tried
 
+= 1.0.5 =
+* Include Post Conference Toggle Field
+
 = 1.0.4 =
 * Fix Color CSS Filter
 
