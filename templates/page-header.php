@@ -5,6 +5,8 @@
   if (class_exists('acf')) {
     if (get_field('title', 'option')) {
       $h1 = get_field('title', 'option');
+    } else {
+      $h1 = get_bloginfo('name');
     }
   } else {
     $h1 = get_bloginfo('name');

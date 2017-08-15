@@ -10,6 +10,8 @@ if (class_exists('acf')) {
     the_field('video');
     echo '</div>';
     echo '</div>';
+  } else {
+    the_content();
   }
 } else {
   the_content();
