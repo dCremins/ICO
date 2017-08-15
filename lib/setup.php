@@ -111,6 +111,8 @@ if (class_exists('acf')) {
     wp_enqueue_style('color/css', Assets\asset_path('styles/purple.css'), false, null);
   } elseif (get_field('color_scheme', 'option') == 'Orange') {
     wp_enqueue_style('color/css', Assets\asset_path('styles/orange.css'), false, null);
+  } else {
+    wp_enqueue_style('color/css', Assets\asset_path('styles/green.css'), false, null);
   }
 } else {
   wp_enqueue_style('color/css', Assets\asset_path('styles/green.css'), false, null);

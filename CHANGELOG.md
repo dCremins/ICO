@@ -2,6 +2,9 @@
 
 The following numbers are almost certainly not correct semantic versioning, but I tried
 
+= 1.0.4 =
+* Fix Color CSS Filter
+
 = 1.0.2 & 1.03 =
 Version Bumps to trick github updater
 
