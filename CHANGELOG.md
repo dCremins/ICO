@@ -2,9 +2,11 @@
 
 The following numbers are almost certainly not correct semantic versioning, but I tried
 
+= 1.0.9 =
+* Updated the author filter to remove users from bylines listings
+
 = 1.0.8 =
 * Fix Sticky Header on IE
-
 
 = 1.0.7 =
 * Fix Logic
