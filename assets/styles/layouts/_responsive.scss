@@ -84,4 +84,21 @@
       margin: 0 20px;
     }
   }
+
+  .search_filter {
+    align-items: center;
+    flex-flow: row wrap;
+    margin-bottom: 20px;
+    width: 100%;
+
+    h3 {
+      font-size: 20px;
+      width: 40%;
+    }
+
+    .search_input {
+      margin-top: -25px;
+      width: 60%;
+    }
+  }
 }

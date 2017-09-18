@@ -2,6 +2,15 @@
 
 The following numbers are almost certainly not correct semantic versioning, but I tried
 
+= 1.1.0 =
+* Modified the search function to filter by:
+  * Author
+  * Session Title
+  * Date
+  * Keyword
+  * Only Proceedings
+* Modified Search page styles for desktop 
+
 = 1.0.9 =
 * Updated the author filter to remove users from bylines listings
 

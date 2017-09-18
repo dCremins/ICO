@@ -1,106 +1,116 @@
-<?php
-/*
-** get_post_types(args, output, operator);
-** https://codex.wordpress.org/Function_Reference/get_post_types
-*/
-$post_types = get_post_types(['public'   => true], 'names', 'and');
 
-/*
-** Get Authors list is Co-Authors Plugin is installed
-** https://wordpress.org/plugins/co-authors-plus/
-*/
-if (function_exists('coauthors_posts_links')) {
-   global $coauthors_plus;
-   $args = array(
-     'post_type' => 'guest-author',
-     'numberposts' => -1,
-     'orderby' => 'title',
-     'order' => 'ASC'
-   );
-   $guest_authors = get_posts($args);
-   $tax = $coauthors_plus->coauthor_taxonomy;
-   $terms = get_terms($tax);
-}
-?>
+<form id="searchform" method="get" role="search" action="<?php echo home_url('/'); ?>">
+<div class="search_container">
+   <!-- Author -->
+   <?php if (class_exists( 'Bylines\Objects\Byline' )) {
+      $terms = get_terms('byline');?>
+    <div class="search_filter">
+      <h3 class="subheader">Author</h3>
+      <div class="search_input">
+        <label class="sr-only" for="authors" class=""><?php _e('Select an Author: ', 'textdomain'); ?></label><br>
+        <select name="authors" class="custom-select">
+          <optgroup label="Authors">
+            <option selected value="">All Authors</option>
+            <?php foreach ($terms as $byline) {
+              if ((get_user_by('ID', $byline->ID)) || get_user_by('slug', $byline->slug)) {
+                //
+              } else { ?>
+                <option value="<?php echo $byline->slug; ?>"><?php echo $byline->name; ?></option>
+            <?php  }
+            ?>
+            <?php }; ?>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <?php }?>
+    <!-- /Author -->
+    <!-- Day -->
+    <?php if (post_type_exists( 'session' )) {
+      $args = array(
+        'post_type'   => 'session',
+        'numberposts' => -1,
+      	'meta_key'		=> 'date',
+      	'orderby'			=> 'meta_value',
+      	'order'				=> 'ASC'
+      );
+      $days = get_posts($args);
+      //echo var_dump($days[0]);
+    ?>
+     <div class="search_filter">
+       <h3 class="subheader">Day</h3>
+       <div class="search_input">
+         <label class="sr-only" for="days" class=""><?php _e('Filter by Day: ', 'textdomain'); ?></label><br>
+         <select name="days" class="custom-select">
+           <optgroup label="Authors">
+             <option selected value="">All Days</option>
+             <?php $yesterday = '';
+             foreach ($days as $date) {
+               if ($yesterday !== get_field('date', $date->ID)) {
+                 echo '<option value="'.get_field('date', $date->ID).'">'.date("F j", strtotime(get_field('date', $date->ID))).'</option>';
+                 $yesterday = get_field('date', $date->ID);
+               } else {
+                 $yesterday = get_field('date', $date->ID);
+                 continue;
+               }
+            }; ?>
+           </optgroup>
+         </select>
+       </div>
+     </div>
+     <?php }?>
+    <!-- /Day -->
+    <!-- Session -->
+    <?php if (post_type_exists( 'session' )) {
+      $args = array(
+        'post_type'   => 'session',
+        'numberposts' => -1,
+        'orderby'     => 'title',
+        'order'       => 'ASC'
+      );
+      $sessions = get_posts($args);
+    ?>
+     <div class="search_filter">
+       <h3 class="subheader">Session</h3>
+       <div class="search_input">
+         <label class="sr-only" for="sessions" class=""><?php _e('Filter by Session: ', 'textdomain'); ?></label><br>
+         <select name="sessions" class="custom-select">
+           <optgroup label="Session">
+             <option selected value="">All Sessions</option>
+             <?php foreach ($sessions as $sess) { ?>
+               <option value="<?php echo $sess->ID; ?>"><?php echo $sess->post_title; ?></option>
+             <?php }; ?>
+           </optgroup>
+         </select>
+       </div>
+     </div>
+     <?php }?>
+    <!-- /Session -->
+    <!-- Proceedings Only -->
+    <?php if (class_exists( 'Bylines\Objects\Byline' )) {
+       $terms = get_terms('byline');?>
+     <div class="search_filter">
+       <h3 class="subheader">Proceedings Only</h3>
+       <input type="checkbox" class="search_proceedings" name="proceeding_only" value='true' />
+     </div>
+     <?php }
 
-<h2 class="search-page subheader">
-  <a data-toggle="collapse" href="#advanced" aria-expanded="false" aria-controls="collapseExample">Advanced Search</a>
-</h2>
-<br />
 
-<div id="search" class="search-page">
-    <form id="searchform" method="get" role="search" action="<?php echo home_url('/'); ?>">
+     ?>
+    <!-- /Proceedings Only -->
+
+  <div id="search" class="search-page">
       <div class="form-group input-group">
         <label for="s" class="sr-only">Search:</label>
-       <input type="search" name="s" id="s" class="form-control"
-       value="<?php the_search_query(); ?>"
-       placeholder="Search for..." />
-         <span class="input-group-btn">
-           <button class="btn btn-secondary search-button" type="submit" value="Search" alt="Search">Search</button>
-         </span>
-     </div>
-<div class="container">
-     <div id="advanced" class="collapse">
-       <div class="row">
+        <input type="search" name="s" id="s" class="form-control"
+          value="<?php the_search_query(); ?>"
+          placeholder="Search for..." />
+        <span class="input-group-btn">
+          <button class="btn btn-secondary search-button" type="submit" value="Search" alt="Search">Search</button>
+        </span>
+      </div>
+  </div>
 
-<!-- Author -->
-
-       <fieldset class="form-group col-lg-8">
-         <h3 class="search-page subheader">Types</h3>
-         <p id="typeHelp" class="form-text text-muted">Defaults to all post types if no boxes are selected.</p>
-        <?php
-        foreach ($post_types as $post_type) {
-          if ($post_type == 'attachment' || $post_type == 'guest-author') {
-             continue;
-          }
-          if (isset($_GET['type']) && in_array($post_type, $_GET['type'])) {
-            $checked = 'checked';
-          } else {
-            $checked = '';
-          }
-          echo '<div class="form-check form-check-inline">
-          <label for="'
-          . $post_type
-          . '" class="form-check-label">
-          <input name="type[]" class="form-check-input" type="checkbox" id="'
-          . $post_type
-          . '-checkbox" value="'
-          . $post_type
-          . '"'
-          . $checked . ' />  '
-          . ucfirst($post_type)
-          . '</label>
-          </div>';
-        }
-        ?>
-      </fieldset>
-
-<!-- Author -->
-
-      <div id="authors-collapser" class="collapse col-lg-4">
-        <?php if (function_exists('coauthors_posts_links')) { ?>
-        <h3 class="search-page subheader">Author</h3>
-        <p id="typeHelp" class="form-text text-muted">Narrow search by author.</p>
-        <div class="input-group">
-          <label class="sr-only" for="<?php echo $tax; ?>" class=""><?php _e('Select an Author: ', 'textdomain'); ?></label><br>
-          <select name="<?php echo $tax; ?>" class="custom-select">
-            <optgroup label="Authors">
-              <option selected value="">All Authors</option>
-              <?php foreach ($guest_authors as $ga) { ?>
-              <option value="<?php echo $ga->post_name; ?>"><?php echo $ga->post_title; ?></option>
-              <?php }; ?>
-            </optgroup>
-          </select>
-        </div>
-        <?php }?>
-     </div>
-
-<!-- /Author -->
-
-   </div>
-    </div>
 </div>
 
-
-     </form>
-</div>
+</form>
