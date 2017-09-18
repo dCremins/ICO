@@ -2,6 +2,9 @@
 
 The following numbers are almost certainly not correct semantic versioning, but I tried
 
+= 1.1.1 =
+* Version bump because I forgot to run gulp --production
+
 = 1.1.0 =
 * Modified the search function to filter by:
   * Author
@@ -9,7 +12,7 @@ The following numbers are almost certainly not correct semantic versioning, but 
   * Date
   * Keyword
   * Only Proceedings
-* Modified Search page styles for desktop 
+* Modified Search page styles for desktop
 
 = 1.0.9 =
 * Updated the author filter to remove users from bylines listings
