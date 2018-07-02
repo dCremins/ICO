@@ -20,7 +20,9 @@
   "scripts": {
     "build": "bower install && gulp",
     "jshint": "gulp jshint",
-    "jscs": "jscs gulpfile.js assets/scripts/*.js"
+    "jscs": "jscs gulpfile.js assets/scripts/*.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "engines": {
     "node": ">= 4.5"
@@ -61,6 +63,8 @@
     "font-awesome": "^4.7.0",
     "modularscale-sass": "^2.1.1",
     "sass-include-paths": "^4.10.0",
-    "sass-math-pow": "^0.1.4"
-  }
+    "sass-math-pow": "^0.1.4",
+    "snyk": "^1.88.0"
+  },
+  "snyk": true
 }
