@@ -2,7 +2,6 @@
 namespace ICO\Bylines;
 use Bylines\Objects\Byline;
 
-
 function get_the_bylines_posts_link() {
   if (class_exists( 'Bylines\Objects\Byline' )) {
     $bylines = get_bylines();
@@ -15,7 +14,7 @@ function get_the_bylines_posts_link() {
           $authors[] = $byline;
       }
     }
-    //echo var_dump($authors);
+
     if((count($authors) > 0)) {
       $return .= '<span style="font-weight: bold;">Authors: </span>';
       $i = 0;
